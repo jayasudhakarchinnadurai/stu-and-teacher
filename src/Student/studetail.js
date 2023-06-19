@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 function Student ({user, setuser}){
+    const history=useHistory();
 
     const DeleteStu =(idx)=>{
 
@@ -11,7 +13,8 @@ function Student ({user, setuser}){
 
     }
     return (
-    <div>  
+    <div> 
+        <button  onClick={()=>history.push("/student")} >DashBorad</button> 
     <h2>Student Details</h2>
     <div  className='student'>
     {user.map((stu,idx)=>{
@@ -20,7 +23,7 @@ function Student ({user, setuser}){
     <p>Email:{stu.email}</p>
     <p>Batch:{stu.batch}</p>
     <p>Year: {stu.year}</p>
-    <button className="edit">Edit</button>{" "}
+    <button className="edit" >Edit</button>{" "}
     <button className="delete" onClick={()=>DeleteStu(stu.id)}>Delete</button>{" "}
     <button className="view">View</button>
     </div> 
