@@ -15,6 +15,7 @@ function Student ({user, setuser}){
     return (
     <div> 
         <button  onClick={()=>history.push("/student")} >DashBorad</button> 
+        <button onClick={()=>history.push('/add')}>Addstudents</button>
     <h2>Student Details</h2>
     <div  className='student'>
     {user.map((stu,idx)=>{
