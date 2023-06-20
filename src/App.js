@@ -8,7 +8,7 @@ import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 import { Route } from 'react-router-dom/cjs/react-router-dom';
 import Addstudents from './Student/Addstu.js';
 import { Teacher } from './Data/Teacherdata.js';
-import AddTeacher from './Teacher/AddTeach';
+import AddTeacher from './Teacher/teacherdetail.js';
 function App() {
   const [user, setuser]=useState(Studentdata)
   const [teacher, setteacher]=useState(Teacher)
@@ -38,7 +38,10 @@ function App() {
   teacher={teacher}
   setteacher={setteacher}
   
+  
   ></AddTeacher>
+  <div>welcome login page</div>
+
  </Route>
 
 
