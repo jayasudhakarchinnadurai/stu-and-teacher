@@ -28,3 +28,19 @@
 .view{
   padding: 2px;
 }
+
+
+.Teacher{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.Teacherdata{
+  background-color: orangered;
+  width: 250px;
+  color: white;
+
+
+}

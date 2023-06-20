@@ -9,6 +9,7 @@ import { Route } from 'react-router-dom/cjs/react-router-dom';
 import Addstudents from './Student/Addstu.js';
 import { Teacher } from './Data/Teacherdata.js';
 import AddTeacher from './Teacher/teacherdetail.js';
+import Addteacherdata from './Teacher/AddTeacher';
 function App() {
   const [user, setuser]=useState(Studentdata)
   const [teacher, setteacher]=useState(Teacher)
@@ -16,6 +17,24 @@ function App() {
     <div className="App">
       
 <Switch>
+
+  
+<Route extact path='/'>
+  <AddTeacher
+  teacher={teacher}
+  setteacher={setteacher}
+  ></AddTeacher>
+
+<Route>
+  <Addteacherdata 
+  extact path='/teachers'
+  
+  teacher={teacher}
+  setteacher={setteacher}></Addteacherdata>
+  </Route>
+  
+</Route>
+
     <Route extact path="/student">
     <BaseApp></BaseApp>
     </Route>
@@ -33,17 +52,9 @@ function App() {
      ></Student>
  </Route>
 
- <Route extact path='/'>
-  <AddTeacher
-  teacher={teacher}
-  setteacher={setteacher}
-  
-  
-  ></AddTeacher>
-  <div>welcome login page</div>
+ <Route>
 
  </Route>
-
 
 </Switch>
     </div>
