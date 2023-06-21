@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 
 
-function Addteacherdata(teacher,setteacher){
+function Addteacherdata({teacher,setteacher}){
     const [id, setid]=useState('')
     const[name,setname]=useState()
     const[email,setemail]=useState()
