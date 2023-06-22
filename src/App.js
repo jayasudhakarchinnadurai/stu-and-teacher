@@ -17,15 +17,11 @@ function App() {
     <div className="App">
       
 <Switch>
-<Route>
-  <Addteacherdata 
-  extact path='/teachers'
-  
-  teacher={teacher}
-  setteacher={setteacher}></Addteacherdata>
-  </Route>
-  
-<Route extact path='/'>
+<Route extact path="/">
+    <BaseApp></BaseApp>
+    </Route>
+
+<Route extact path='/teacher'>
   <AddTeacher
   teacher={teacher}
   setteacher={setteacher}
@@ -34,10 +30,24 @@ function App() {
 
 
 
-    <Route extact path="/student">
-    <BaseApp></BaseApp>
-    </Route>
-    <Route extact path="/add">
+
+
+
+<Route>
+  <Addteacherdata 
+  extact path='/teachers'
+  
+  teacher={teacher}
+  setteacher={setteacher}></Addteacherdata>
+  </Route>
+  
+
+
+
+
+    
+
+    <Route extact path="/addstu">
       <Addstudents 
       user={user}
       setuser={setuser}
@@ -51,10 +61,7 @@ function App() {
      ></Student>
  </Route>
 
- <Route>
-
- </Route>
-
+ 
 </Switch>
     </div>
   );
