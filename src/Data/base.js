@@ -6,7 +6,7 @@ function BaseApp(){
     return (
     <div>
         <h3>DashBorad</h3>
-        <button onClick={()=>history.push("/data")}>Students Profile</button><br></br>
+        <button onClick={()=>history.push("/student")}>Students Profile</button><br></br>
 
         <button onClick={()=>history.push("/teacher")} >Teacher Profile</button>
 

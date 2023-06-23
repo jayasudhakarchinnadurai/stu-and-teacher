@@ -20,7 +20,7 @@ const  students= ()=>{
         }
     
     setuser([Addstulist, ...user])
-    history.push('/')
+    history.push('/student')
 }
 
     return (

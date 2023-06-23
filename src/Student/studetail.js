@@ -14,8 +14,8 @@ function Student ({user, setuser}){
     }
     return (
     <div> 
-        <button  onClick={()=>history.push("/student")} >DashBorad</button> 
-        <button onClick={()=>history.push('/add')}>Addstudents</button>
+        <button  onClick={()=>history.push("/")} >DashBorad</button> 
+        <button onClick={()=>history.push('/addstudents')}>Addstudents</button>
     <h2>Student Details</h2>
     <div  className='student'>
     {user.map((stu,idx)=>{
@@ -24,9 +24,9 @@ function Student ({user, setuser}){
     <p>Email:{stu.email}</p>
     <p>Batch:{stu.batch}</p>
     <p>Year: {stu.year}</p>
-    <button className="edit" >Edit</button>{" "}
+    <button className="edit" onClick={()=>history.push(`/editstudent/${idx}`)} >Edit</button>{" "}
     <button className="delete" onClick={()=>DeleteStu(stu.id)}>Delete</button>{" "}
-    <button className="view">View</button>
+    <button className="view" onClick={()=>history.push(`/view/${idx}`)}>View</button>
     </div> 
     
     

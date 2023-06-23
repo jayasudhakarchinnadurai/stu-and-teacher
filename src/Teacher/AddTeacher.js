@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 
 function Addteacherdata({teacher,setteacher}){
+    const history=useHistory()
     const [id, setid]=useState('')
     const[name,setname]=useState()
     const[email,setemail]=useState()
@@ -12,7 +13,7 @@ function Addteacherdata({teacher,setteacher}){
     const[subject,setsubject]=useState();
 
     const Addteacher =()=>{
-        const history=useHistory()
+       
         const teacherlist={
             id,
             name,
@@ -23,7 +24,7 @@ function Addteacherdata({teacher,setteacher}){
         }
 
         setteacher([teacherlist,...teacher])
-        history.push("/")
+        history.push("/teacher")
 
         
 
