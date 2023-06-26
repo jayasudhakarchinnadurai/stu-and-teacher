@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
@@ -7,16 +8,45 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom";
 function EditStudent({user, setuser}){
    const history=useHistory();
    const {id}=useParams()
-   console.log(id)
-   const selectuser= user.find((per,indx)=>per.id === id);
-    console.log(selectuser);
- 
+   const person=user[id]
+   
+
    const [idx,setidx]=useState();
    const[name,setname]=useState();
    const[email,setemail]=useState();
    const[batch, setbatch]=useState();
    const[year, setyear]=useState();
+
+
+
+
+   useEffect(()=>{
+      setidx(person.id);
+      setname(person.name);
+      setemail(person.email);
+      setbatch(person.batch);
+      setyear(person.year);
+         },[])
+         
+ const updateuser=()=>{
+   const editindex= user.findIndex(per=>per.id === id)
+   const editstu ={
+
+      idx,
+      name,
+      email,
+      batch,
+      year
+   }
+
+  user[editindex]=editstu;
    
+   setuser([ ...user])
+   console.log(user)
+   
+   history.push("/student")
+  
+ }   
 
 
 
@@ -49,7 +79,7 @@ function EditStudent({user, setuser}){
            value={year}
          />
 
-         <button >editstudent</button>
+         <button onClick={updateuser}>editstudent</button>
       </div>
 
    )

@@ -24,7 +24,7 @@ function Student ({user, setuser}){
     <p>Email:{stu.email}</p>
     <p>Batch:{stu.batch}</p>
     <p>Year: {stu.year}</p>
-    <button className="edit" onClick={()=>history.push(`/editstudent/${stu.id}`)} >Edit</button>{" "}
+    <button className="edit" onClick={()=>history.push(`/editstudent/${idx}`)} >Edit</button>{" "}
     <button className="delete" onClick={()=>DeleteStu(stu.id)}>Delete</button>{" "}
     <button className="view" onClick={()=>history.push(`/view/${idx}`)}>View</button>
     </div> 
