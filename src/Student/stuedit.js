@@ -19,11 +19,8 @@ function EditStudent(){
    const[email,setemail]=useState();
    const[batch, setbatch]=useState();
    const[year, setyear]=useState();
-
-
-
-
-   useEffect(()=>{
+   
+useEffect(()=>{
       setidx(person.id);
       setname(person.name);
       setemail(person.email);
