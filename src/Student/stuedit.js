@@ -1,11 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { Appcontext } from "../context/appprovider";
 
 
-function EditStudent({user, setuser}){
+function EditStudent(){
+   const {user,setuser}=useContext(Appcontext)
    const history=useHistory();
    const {id}=useParams()
    const person=user[id]
@@ -29,10 +32,10 @@ function EditStudent({user, setuser}){
          },[])
          
  const updateuser=()=>{
-   const editindex= user.findIndex(per=>per.id === id)
+   const editindex= user.findIndex(per=>per.id === idx)
    const editstu ={
 
-      idx,
+      id:idx,
       name,
       email,
       batch,
@@ -47,11 +50,7 @@ function EditStudent({user, setuser}){
    history.push("/student")
   
  }   
-
-
-
-   
-   return(
+return(
       <div>
          <input 
          placeholder="id"

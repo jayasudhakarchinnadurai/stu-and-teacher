@@ -1,8 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { Appcontext } from "../context/appprovider";
 
-function Viewstudent({user}){
+function Viewstudent(){
+    const {user}=useContext(Appcontext)
     const history=useHistory();
     const {id}=useParams();
     const per=user[id]

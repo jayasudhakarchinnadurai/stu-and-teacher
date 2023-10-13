@@ -1,10 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { Appcontext } from "../context/appprovider";
 
-
-
-function Addteacherdata({teacher,setteacher}){
+function Addteacherdata(){
+    const {teacher,setteacher}=useContext(Appcontext)
     const history=useHistory()
     const [id, setid]=useState('')
     const[name,setname]=useState()

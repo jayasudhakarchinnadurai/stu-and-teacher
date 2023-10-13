@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Appcontext } from "../context/appprovider";
 
-function TeacherDetail ({teacher, setteacher}){
+function TeacherDetail (){
+    const {teacher,setteacher}=useContext(Appcontext)
     const history=useHistory()
     const Teacherdata=(idx)=>{
         const Deleteacher=teacher.filter((per)=>per.id !==idx)
@@ -12,10 +15,10 @@ function TeacherDetail ({teacher, setteacher}){
 return(
     <div>
         <div>
-            <button onClick={()=>history.push('/student')}>StudentProfile</button>
-            <button onClick={()=>history.push('/teacheradd')}>AddTeacher</button>
+            <button onClick={()=>history.push('/student')} className="stu-btn">StudentProfile</button><br></br>
+            <button onClick={()=>history.push('/teacheradd')} className="teacher-btn">AddTeacher</button><br></br>
             
-            <h3>Teacher Details</h3>
+    <h3>Teacher Details</h3>
         </div><br></br>
     <div className="Teacher">
         
@@ -25,7 +28,7 @@ return(
             <p>Email:{person.email}</p>
             <p>Subject:{person.subject}</p>
             <p>Expreience;{person.exprience}</p>
-           <button>Edit</button><button onClick={()=>history.push(`/views/${idx}`)}>View</button><button onClick={()=>Teacherdata(person.id)}>Delete</button>
+           <button onClick={()=>history.push(`/teacheredit/${idx}`)}>Edit</button><button onClick={()=>history.push(`/views/${idx}`)}>View</button><button onClick={()=>Teacherdata(person.id)}>Delete</button>
         </div>
 
      })}

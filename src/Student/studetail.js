@@ -1,7 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { Appcontext } from "../context/appprovider";
 
-function Student ({user, setuser}){
+function Student (){
+    const {user,setuser}=useContext(Appcontext)
     const history=useHistory();
 
     const DeleteStu =(idx)=>{
@@ -14,8 +17,8 @@ function Student ({user, setuser}){
     }
     return (
     <div> 
-        <button  onClick={()=>history.push("/")} >DashBorad</button> 
-        <button onClick={()=>history.push('/addstudents')}>Addstudents</button>
+        <button  onClick={()=>history.push("/")} className="teacher-btn" >DashBorad</button> 
+        <button onClick={()=>history.push('/addstudents')} className="addstu-btn">Addstudents</button><br></br>
     <h2>Student Details</h2>
     <div  className='student'>
     {user.map((stu,idx)=>{
